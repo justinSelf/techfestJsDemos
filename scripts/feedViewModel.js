@@ -8,15 +8,8 @@ define(['libraries/knockout'], function (ko) {
         this.comments = ko.observableArray();
     }
 
-
     var feedViewModel = {
-        statuses: ko.observableArray(),
-        newStatusMessage: ko.observable(),
-        addNewStatus: function () {
-            this.statuses.push(new Status(this.newStatusMessage(), 'You', new Date().getTime()));
-            this.newStatusMessage('');
-        }
-
+        statuses: ko.observableArray()
     };
 
     feedViewModel.statuses.push(new Status('This is a message', 'You', new Date().getTime()));
