@@ -19,28 +19,30 @@
     <div class="large-6 columns">
         <div class="add-status-container">
             <label for="new-status-message">Status: </label>
-            <input id="new-status-message" type="text"/>
-            <button class="button">Add Status</button>
+            <input id="new-status-message" type="text" data-bind="value : newStatusMessage"/>
+            <button class="button" data-bind="click: addNewStatus">Add Status</button>
         </div>
 
         <div class="statuses-container" data-bind="foreach: statuses">
             <div class="row">
                 <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>
                 <div class="large-10 columns">
-                    <p><strong data-bind="text: userName() + ' said: '"></strong> <span
-                            data-bind="text: message"></span>
+                    <p><strong data-bind="text: userName() + ' said: '"></strong>
+                        <span data-bind="text: message"></span>
                     </p>
                     <ul class="inline-list">
                         <li><a href="">Reply</a></li>
                     </ul>
 
-                    <!--<div class="comment-container" data-bind="visible: comments().length > 0">-->
-                    <h6 data-bind="text: comments.length + ' comments'"></h6>
+                    <div class="comments-container" data-bind="visible : comments().length > 0">
 
-                    <div data-bind="foreach: comments">
-                        <div class="row">
-                            <div class="large-2 columns small-3" data-bind="text: userName"></div>
-                            <div class="large-10 columns"><p data-bind="text: message"></p></div>
+                        <h6 data-bind="text: comments.length + ' comments'"></h6>
+
+                        <div data-bind="foreach: comments">
+                            <div class="row">
+                                <div class="large-2 columns small-3" data-bind="text: userName"></div>
+                                <div class="large-10 columns"><p data-bind="text: message"></p></div>
+                            </div>
                         </div>
                     </div>
                 </div>

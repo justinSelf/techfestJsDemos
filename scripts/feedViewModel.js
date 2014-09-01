@@ -9,11 +9,16 @@ define(['libraries/knockout', 'libraries/postal'], function (ko, postal) {
     }
 
     var feedViewModel = {
-        statuses: ko.observableArray()
+        statuses: ko.observableArray(),
+        newStatusMessage: ko.observable(),
+        addNewStatus: function () {
+            this.statuses.push(new Status(this.newStatusMessage(), 'You', new Date().getTime()));
+            this.newStatusMessage('');
+        }
     };
 
     feedViewModel.statuses.push(new Status('This is a message', 'You', new Date().getTime()));
-    feedViewModel.statuses.push(new Status('I love bacon!', 'The Dog'));
+    feedViewModel.statuses.push(new Status('I love bacon!', 'The Dog', new Date().getTime()));
 
     return feedViewModel;
 
