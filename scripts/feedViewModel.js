@@ -1,4 +1,4 @@
-define(['libraries/knockout'], function (ko) {
+define(['libraries/knockout', 'libraries/postal'], function (ko, postal) {
 
 
     function Status(message, userName, id) {
