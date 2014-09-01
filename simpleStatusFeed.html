@@ -1,0 +1,88 @@
+<html>
+<head>
+    <link href="css/foundation.css" rel="stylesheet"/>
+    <script data-main="scripts/main" src="scripts/libraries/require.js"></script>
+</head>
+<body>
+<div class="row">
+    <div class="large-12 columns">
+        <div class="panel">
+            <h1>Simple Status Feed</h1>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="large-3 columns ">
+    </div>
+
+    <div class="large-6 columns">
+        <div class="add-status-container">
+            <label for="new-status-message">Status: </label>
+            <input id="new-status-message" type="text" data-bind="value: newStatusMessage"/>
+            <button class="button" data-bind="click: addNewStatus">Add Status</button>
+        </div>
+
+        <div class="statuses-container" data-bind="foreach: statuses">
+            <div class="row">
+                <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>
+                <div class="large-10 columns">
+                    <p><strong data-bind="text: userName() + ' said: '"></strong> <span
+                            data-bind="text: message"></span>
+                    </p>
+                    <ul class="inline-list">
+                        <li><a href="">Reply</a></li>
+                    </ul>
+
+                    <!--<div class="comment-container" data-bind="visible: comments().length > 0">-->
+                    <h6 data-bind="text: comments.length + ' comments'"></h6>
+
+                    <div data-bind="foreach: comments">
+                        <div class="row">
+                            <div class="large-2 columns small-3" data-bind="text: userName"></div>
+                            <div class="large-10 columns"><p data-bind="text: message"></p></div>
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+            </div>
+        </div>
+    </div>
+
+
+    <aside class="large-3 columns">
+        <!--<div id="stub-status-create-container">-->
+        <!--<div class="row">-->
+        <!--<label for="stub-user">Stub User</label>-->
+        <!--<input id="stub-user" type="text"/>-->
+        <!--</div>-->
+        <!--<div class="row">-->
+        <!--<label for="stub-status-message">Stub Status</label>-->
+        <!--<input id="stub-status-message" type="text"/>-->
+        <!--</div>-->
+        <!--<div class="button">Add Stub Status</div>-->
+        <!--</div>-->
+    </aside>
+</div>
+<footer class="row">
+    <div class="large-12 columns">
+        <hr/>
+        <div class="row">
+            <div class="large-5 columns">
+                <p>© Copyright All Trees, everywhere.</p>
+            </div>
+            <!--                     <div class="large-7 columns">
+                                    <ul class="inline-list right">
+                                        <li><a href="#">Section 1</a></li>
+                                        <li><a href="#">Section 2</a></li>
+                                        <li><a href="#">Section 3</a></li>
+                                        <li><a href="#">Section 4</a></li>
+                                        <li><a href="#">Section 5</a></li>
+                                        <li><a href="#">Section 6</a></li>
+                                    </ul>
+                                </div> -->
+        </div>
+    </div>
+</footer>
+</body>
+</html>
