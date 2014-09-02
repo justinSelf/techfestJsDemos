@@ -1,7 +1,13 @@
 <html>
 <head>
     <link href="css/foundation.css" rel="stylesheet"/>
-    <script data-main="scripts/main" src="scripts/libraries/require.js"></script>
+    <script src="scripts/libraries/require.js"></script>
+    <script>
+        require(['scripts/common'], function () {
+            require(['main'])
+        });
+    </script>
+
 </head>
 <body>
 <div class="row">
@@ -34,15 +40,13 @@
                         <li><a href="">Reply</a></li>
                     </ul>
 
-                    <div class="comments-container" data-bind="visible : comments().length > 0">
 
-                        <h6 data-bind="text: comments.length + ' comments'"></h6>
+                    <h6 data-bind="text: comments.length + ' comments'"></h6>
 
-                        <div data-bind="foreach: comments">
-                            <div class="row">
-                                <div class="large-2 columns small-3" data-bind="text: userName"></div>
-                                <div class="large-10 columns"><p data-bind="text: message"></p></div>
-                            </div>
+                    <div data-bind="foreach: comments">
+                        <div class="row">
+                            <div class="large-2 columns small-3" data-bind="text: userName"></div>
+                            <div class="large-10 columns"><p data-bind="text: message"></p></div>
                         </div>
                     </div>
                 </div>

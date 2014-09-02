@@ -1,4 +1,4 @@
-define(['libraries/knockout', 'libraries/postal'], function (ko, postal) {
+define(['knockout', 'postal'], function (ko, postal) {
 
 
     function Status(message, userName, id) {
@@ -9,7 +9,7 @@ define(['libraries/knockout', 'libraries/postal'], function (ko, postal) {
     }
 
     var feedViewModel = {
-        statuses: ko.observableArray(),
+        statuses: ko.observableArray()
     };
 
     feedViewModel.statuses.push(new Status('This is a message', 'You', new Date().getTime()));
