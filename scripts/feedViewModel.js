@@ -8,6 +8,7 @@ define(['knockout', 'postal'], function (ko, postal) {
         this.comments = ko.observableArray();
     }
 
+
     var feedViewModel = {
         statuses: ko.observableArray()
     };
