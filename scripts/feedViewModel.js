@@ -9,11 +9,7 @@ define(['knockout'], function (ko) {
 
 
     var feedViewModel = {
-        statuses: ko.observableArray(),
-        newStatus: ko.observable(),
-        addStatus: function () {
-            this.statuses.push(new Status(this.newStatus(), 'You', new Date().getTime()));
-        }
+        statuses: ko.observableArray()
     };
 
     feedViewModel.statuses.push(new Status('This is a message', 'You', new Date().getTime()));
