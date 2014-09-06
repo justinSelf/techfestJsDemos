@@ -1,5 +1,4 @@
-define(['knockout', 'postal'], function (ko, postal) {
-
+define(['knockout'], function (ko) {
 
     function Status(message, userName, id) {
         this.message = ko.observable(message);

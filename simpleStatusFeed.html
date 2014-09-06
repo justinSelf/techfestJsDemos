@@ -19,17 +19,14 @@
 </div>
 
 <div class="row">
-    <div class="large-3 columns ">
-    </div>
-
-    <div class="large-6 columns">
-        <div class="add-status-container">
+    <div class="large-12 columns">
+        <div id="add-status-container">
             <label for="new-status-message">Status: </label>
-            <input id="new-status-message" type="text"/>
-            <button class="button">Add Status</button>
+            <input id="new-status-message" type="text" data-bind="value: status"/>
+            <button class="button" data-bind="click: addStatus">Add Status</button>
         </div>
 
-        <div class="statuses-container" data-bind="foreach: statuses">
+        <div id="statuses-container" class="statuses-container" data-bind="foreach: statuses">
             <div class="row">
                 <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>
                 <div class="large-10 columns">
@@ -56,37 +53,13 @@
     </div>
 
 
-    <aside class="large-3 columns">
-        <!--<div id="stub-status-create-container">-->
-        <!--<div class="row">-->
-        <!--<label for="stub-user">Stub User</label>-->
-        <!--<input id="stub-user" type="text"/>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-        <!--<label for="stub-status-message">Stub Status</label>-->
-        <!--<input id="stub-status-message" type="text"/>-->
-        <!--</div>-->
-        <!--<div class="button">Add Stub Status</div>-->
-        <!--</div>-->
-    </aside>
 </div>
 <footer class="row">
     <div class="large-12 columns">
-        <hr/>
         <div class="row">
             <div class="large-5 columns">
-                <p>© Copyright All Trees, everywhere.</p>
+                <p>&#169; Copyright All Trees, everywhere.</p>
             </div>
-            <!--                     <div class="large-7 columns">
-                                    <ul class="inline-list right">
-                                        <li><a href="#">Section 1</a></li>
-                                        <li><a href="#">Section 2</a></li>
-                                        <li><a href="#">Section 3</a></li>
-                                        <li><a href="#">Section 4</a></li>
-                                        <li><a href="#">Section 5</a></li>
-                                        <li><a href="#">Section 6</a></li>
-                                    </ul>
-                                </div> -->
         </div>
     </div>
 </footer>
